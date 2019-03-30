@@ -1,9 +1,6 @@
 # log_rotate
 
 
-# log_rotate
-
-
 # Run the ansible playbook using the below line
 # ./bin/provision production
 
