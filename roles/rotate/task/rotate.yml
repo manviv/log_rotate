@@ -1,0 +1,16 @@
+- name: Add app logrotate rules
+  template:
+    src: templates/logrotate.j2
+    dest: "{{ logrotate.app_file }}"
+    owner: root
+    group: root
+    mode: '0644'
+    force: yes
+
+- name: Set up cron
+  cron:
+    name: Hourly log rotation
+    minute: "0"
+    hour: "*"
+    user: root
+    job: "/usr/sbin/logrotate -f {{ logrotate.app_file }} > /dev/null"

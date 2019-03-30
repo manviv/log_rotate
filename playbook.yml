@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  remote_user: mysuperuser  # The remote user that the ansible script will run as
+  roles:
+    - logrotate

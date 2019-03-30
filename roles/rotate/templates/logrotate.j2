@@ -1,0 +1,13 @@
+# Path to your app:
+"/var/log/prompt/*.log" {
+  hourly
+  su deploy deploy
+  size 25M
+  maxsize 50M
+  rotate 150
+  missingok
+  notifempty
+  compress
+  delaycompress
+  copytruncate
+}
